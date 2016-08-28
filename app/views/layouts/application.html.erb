@@ -2,20 +2,86 @@
 <html>
 <head>
   <title>Portfolio</title>
+  <style>
+    .banner {
+        position: relative;
+        width: 100%;
+        overflow: auto;
+        padding: 0px;
+        margin: 0px;
+    }
+    .banner ul {
+        padding: 0px;
+        margin: 0px;
+    }
+    .banner li{
+    padding: 0px;
+    margin: 0px;
+    }
+    .banner ul li {
+        float:left;
+        padding: 0px;
+        margin: 0px;
+        min-height: 200px;
+        -webkit-background-size: 100% auto;
+        -moz-background-size: 100% auto;
+        -o-background-size: 100% auto;
+        -ms-background-size: 100% auto;
+        background-size: 100% auto;
+        background-position-y: -75px;
+        box-shadow: inset 0 -3px 6px rgba(0,0,0,.1);
+    }
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
+   <link href='https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider.css' rel='stylesheet' type='text/css'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider-dots.css' rel='stylesheet' type='text/css'>
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
   
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   
 
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+  <div class="header">
+     <div class="container">
+       <h1> elise harris</h1>
+       <ul class="nav">
+         <li>About</li>
+         <li><%= link_to "Portfolio", "/pages/portfolio" %></li>
+         <li>Contact</li>
+       </ul>
+</div>
+</div>
+
 <%= yield %>
+  
 <div class="footer">
   <a href="https://github.com/eharris99"><img src="http://www.iconsplace.com/icons/preview/white/github-256.png" height="35px" ></a>
 </div>
+  
+
+
+
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/js/unslider-min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.banner').unslider({
+        speed: 500,               //  The speed to animate each slide (in milliseconds)
+        delay: 3000,              //  The delay between slide animations (in milliseconds)
+        complete: function() {},  //  A function that gets called after every slide animation
+        keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+        dots: true,               //  Display dot navigation
+        fluid: true              //  Support responsive design. May break non-responsive designs
+        });
+     });
+</script>
 </body>
 </html>
