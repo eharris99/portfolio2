@@ -12,7 +12,7 @@ padding-top: 20px;
 }
 
 li, a {
-  color:white;
+  color:white!important;
   display:inline!important;
   margin-top:30px;
   position:relative;
@@ -128,10 +128,10 @@ li:hover, li>a:hover, a:hover, a:focus, li:focus, li>a:focus {
 <body>
   <div class="header">
      <div class="container">
-       <a href="./welcome"><h1> elise harris</h1></a>
+       <h1> <%= link_to "elise harris", '/pages/welcome' %></h1>
        <ul class="nav">
          <li style="display:inline;"><a style="color:white;" target="_blank" href="https://dl.dropboxusercontent.com/u/62627839/EliseHarrisresume.pdf">About</a></li>
-         <li  style="display:inline;"><a style="color:white;" href="./pages/portfolio">Portfolio</a></li>
+         <li  style="display:inline;"><a style="color:white;"><%= link_to "Portfolio", '/pages/portfolio' %></li>
          <li  style="display:inline;"><a style="color:white;" target="_blank" href="https://dl.dropboxusercontent.com/u/62627839/EliseHarrisresume.pdf">Contact</a></li>
        </ul>
 </div>
