@@ -3,10 +3,25 @@
 <head>
   <title>Portfolio</title>
   <style>
-   
-      .header {
+
+.header {
 height:75px;
 width:100%;
+color:white;
+padding-top: 20px;
+}
+
+li, a {
+  color:white;
+  display:inline!important;
+  margin-top:30px;
+  position:relative;
+}
+
+li:hover, li>a:hover {
+    text-decoration: none;
+    background: transparent!important;
+    color:green!important;
 }
 
 .header h1 {
@@ -14,7 +29,8 @@ width:100%;
  margin-left:-30px;
  margin-right:40px;
  margin-bottom:75px;
- 
+ margin-top:0px;
+ color:white;
  }
  
  .main {
@@ -37,7 +53,7 @@ width:100%;
  }
  
  .nav {
- display:block;
+ display:inline-block;
  margin-top:15px;
  }
  
@@ -112,11 +128,11 @@ width:100%;
 <body>
   <div class="header">
      <div class="container">
-       <h1> elise harris</h1>
+       <a href="./welcome"><h1> elise harris</h1></a>
        <ul class="nav">
-         <li>About</li>
-         <li><%= link_to "Portfolio", "/pages/portfolio" %></li>
-         <li>Contact</li>
+         <li style="display:inline;">About</li>
+         <li  style="display:inline;"><a style="color:white;" href="./portfolio">Portfolio</a></li>
+         <li  style="display:inline;">Contact</li>
        </ul>
 </div>
 </div>
